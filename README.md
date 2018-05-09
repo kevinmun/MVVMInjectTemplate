@@ -1,4 +1,4 @@
-# ViperInjectTemplate
+# MVVMInjectTemplate
 Xcode template for MVVM with dependency injection using Swinject. Compatible with Xcode 9
 
 # Dependencies
