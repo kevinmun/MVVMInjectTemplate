@@ -10,34 +10,41 @@
 import Foundation
 import Swinject
 
-class ___FILEBASENAMEASIDENTIFIER___ {
+protocol ___FILEBASENAMEASIDENTIFIER___Protocol {
+    func build(presentationContext: ModalPresentationContext) -> ___VARIABLE_moduleName___RouterProtocol
+}
+
+class ___FILEBASENAMEASIDENTIFIER___: ___FILEBASENAMEASIDENTIFIER___Protocol {
     
     private let assembler: Assembler
     
     init(parentAssembler: Assembler) {
         assembler = Assembler([___VARIABLE_moduleName___Container()], parent: parentAssembler)
     }
-    
+
+    func build(presentationContext: ModalPresentationContext) ->  ___VARIABLE_moduleName___RouterProtocol {
+        return assembler.resolver.resolve(___VARIABLE_moduleName___RouterProtocol.self, argument: presentationContext)!
+    }    
 }
 
 class ___VARIABLE_moduleName___Container: Assembly {
     
     func assemble(container: Container) {
         
-        container.register(___VARIABLE_moduleName___RouterInputProtocol.self) { (r, parentRouter: ___VARIABLE_moduleName___ParentRouterProtocol) in
-            ___VARIABLE_moduleName___Router(parentRouter: parentRouter)
+        container.register(___VARIABLE_moduleName___RouterProtocol.self) { (r, presentationContext: ModalPresentationContext) in
+            let controller = r.resolve(___VARIABLE_moduleName___InterfaceProtocol.self)!
+            let router = ___VARIABLE_moduleName___Router(interface: (controller as ___VARIABLE_moduleName___InterfaceProtocol), presentationContext: presentationContext)
+            let viewModel = r.resolve(___VARIABLE_moduleName___ViewModelProtocol.self, arguments: (controller as ___VARIABLE_moduleName___InterfaceProtocol), (router as ___VARIABLE_moduleName___RouterInputProtocol))!
+            controller.viewModel = viewModel
+            return ___VARIABLE_moduleName___Router(interface: (controller as ___VARIABLE_moduleName___InterfaceProtocol), presentationContext: presentationContext)
         }
         
-        container.register(___VARIABLE_moduleName___ViewModelProtocol.self) { (r, interface: ___VARIABLE_moduleName___InterfaceProtocol, parentRouter: ___VARIABLE_moduleName___ParentRouterProtocol) in
-            let router = r.resolve(___VARIABLE_moduleName___RouterInputProtocol.self, argument: parentRouter)!
+        container.register(___VARIABLE_moduleName___ViewModelProtocol.self) { (r, interface: ___VARIABLE_moduleName___InterfaceProtocol, router: ___VARIABLE_moduleName___RouterInputProtocol) in
             return ___VARIABLE_moduleName___ViewModel(interface: interface, router: router)
         }
         
-        container.register(___VARIABLE_moduleName___InterfaceProtocol.self) {  (r, parentRouter: ___VARIABLE_moduleName___ParentRouterProtocol) in
-            let controller = ___VARIABLE_moduleName___ViewController()
-            let viewModel = r.resolve(___VARIABLE_moduleName___ViewModelProtocol.self, argument: (controller as ___VARIABLE_moduleName___InterfaceProtocol))!
-            controller.viewModel = viewModel
-            
+        container.register(___VARIABLE_moduleName___InterfaceProtocol.self) {  r in
+            let controller = ___VARIABLE_moduleName___ViewController()          
             return controller
         }
 

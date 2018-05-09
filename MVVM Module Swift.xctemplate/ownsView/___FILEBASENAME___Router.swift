@@ -9,20 +9,32 @@
 
 import UIKit
 
+protocol ___VARIABLE_moduleName___RouterProtocol: class {
+    var interface: ___VARIABLE_moduleName___InterfaceProtocol { get }
+    var viewController: ___VARIABLE_moduleName___ViewController? { get }
+}
+
 protocol ___VARIABLE_moduleName___RouterInputProtocol: class {
-    
+
 }
 
-protocol ___VARIABLE_moduleName___ParentRouterProtocol: class {
-    
-}
-
-class ___VARIABLE_moduleName___Router: ___VARIABLE_moduleName___RouterInputProtocol {
+class ___VARIABLE_moduleName___Router: ___VARIABLE_moduleName___RouterProtocol {
 	
-    private unowned let parentRouter: ___VARIABLE_moduleName___ParentRouterProtocol
-    
-    init(parentRouter: ___VARIABLE_moduleName___ParentRouterProtocol) {
-        self.parentRouter = parentRouter
+    let interface: ___VARIABLE_moduleName___InterfaceProtocol
+    weak private var presentationContext: ModalPresentationContext?
+    var viewController: ___VARIABLE_moduleName___ViewController? {
+        get {
+            return interface as? ___VARIABLE_moduleName___ViewController
+        } 
     }
     
+    init(interface: ___VARIABLE_moduleName___InterfaceProtocol, presentationContext: ModalPresentationContext) {
+        self.interface = interface
+        self.presentationContext = presentationContext
+    }
+    
+}
+
+extension ___VARIABLE_moduleName___Router: ___VARIABLE_moduleName___RouterInputProtocol {
+
 }

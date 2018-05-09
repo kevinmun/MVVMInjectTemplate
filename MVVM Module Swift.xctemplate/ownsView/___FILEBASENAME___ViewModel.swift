@@ -10,7 +10,7 @@
 import UIKit
 
 protocol ___VARIABLE_moduleName___ViewModelProtocol: class {
-    
+
 }
 
 protocol ___VARIABLE_moduleName___InterfaceProtocol: class {
@@ -22,11 +22,11 @@ protocol ___VARIABLE_moduleName___InterfaceProtocol: class {
 class ___VARIABLE_moduleName___ViewModel {
 
 	weak private var interface: ___VARIABLE_moduleName___InterfaceProtocol?
-    private let router: ___VARIABLE_moduleName___RouterInputProtocol
+    weak private var router: ___VARIABLE_moduleName___RouterInputProtocol?
 
-    init(interface: ___VARIABLE_moduleName___InterfaceProtocol, router: ___VARIABLE_moduleName___RouterInputProtocol) {
+    init(interface: ___VARIABLE_moduleName___InterfaceProtocol, router:___VARIABLE_moduleName___RouterInputProtocol) {
         self.interface = interface
-        self.router = router        
+        self.router = router
     }
     
 }
