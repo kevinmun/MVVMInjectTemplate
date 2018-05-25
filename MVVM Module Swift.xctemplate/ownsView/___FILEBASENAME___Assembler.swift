@@ -36,7 +36,7 @@ class ___VARIABLE_moduleName___Container: Assembly {
             let router = ___VARIABLE_moduleName___Router(interface: (controller as ___VARIABLE_moduleName___InterfaceProtocol), presentationContext: presentationContext)
             let viewModel = r.resolve(___VARIABLE_moduleName___ViewModelProtocol.self, arguments: (controller as ___VARIABLE_moduleName___InterfaceProtocol), (router as ___VARIABLE_moduleName___RouterInputProtocol))!
             controller.viewModel = viewModel
-            return ___VARIABLE_moduleName___Router(interface: (controller as ___VARIABLE_moduleName___InterfaceProtocol), presentationContext: presentationContext)
+            return router
         }
         
         container.register(___VARIABLE_moduleName___ViewModelProtocol.self) { (r, interface: ___VARIABLE_moduleName___InterfaceProtocol, router: ___VARIABLE_moduleName___RouterInputProtocol) in
