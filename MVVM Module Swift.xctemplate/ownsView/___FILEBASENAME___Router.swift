@@ -28,9 +28,13 @@ class ___VARIABLE_moduleName___Router: ___VARIABLE_moduleName___RouterProtocol {
         } 
     }
     
-    init(interface: ___VARIABLE_moduleName___InterfaceProtocol, presentationContext: ModalPresentationContext) {
+    init(interface: ___VARIABLE_moduleName___InterfaceProtocol) {
         self.interface = interface
+    }
+    
+    func start(withPresentationContext presentationContext: ModalPresentationContext) {
         self.presentationContext = presentationContext
+        //display controller using presentation context
     }
     
 }
