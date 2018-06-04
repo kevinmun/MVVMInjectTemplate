@@ -11,7 +11,7 @@ import Foundation
 import Swinject
 
 protocol ___FILEBASENAMEASIDENTIFIER___Protocol {
-    func build(presentationContext: ModalPresentationContext) -> ___VARIABLE_moduleName___RouterProtocol
+    func build() -> ___VARIABLE_moduleName___RouterProtocol
 }
 
 class ___FILEBASENAMEASIDENTIFIER___: ___FILEBASENAMEASIDENTIFIER___Protocol {
