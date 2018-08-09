@@ -22,9 +22,9 @@ class ___VARIABLE_moduleName___Router: ___VARIABLE_moduleName___RouterProtocol {
 	
     let interface: ___VARIABLE_moduleName___InterfaceProtocol
     weak private var presentationContext: ModalPresentationContext?
-    var viewController: ___VARIABLE_moduleName___ViewController? {
+    var viewController: UIViewController? {
         get {
-            return interface as? ___VARIABLE_moduleName___ViewController
+            return interface as? UIViewController
         } 
     }
     
