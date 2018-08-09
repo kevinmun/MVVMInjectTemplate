@@ -11,7 +11,7 @@ import UIKit
 
 protocol ___VARIABLE_moduleName___RouterProtocol: class {
     var interface: ___VARIABLE_moduleName___InterfaceProtocol { get }
-    var viewController: ___VARIABLE_moduleName___ViewController? { get }
+    var viewController: UIViewController? { get }
 }
 
 protocol ___VARIABLE_moduleName___RouterInputProtocol: class {
