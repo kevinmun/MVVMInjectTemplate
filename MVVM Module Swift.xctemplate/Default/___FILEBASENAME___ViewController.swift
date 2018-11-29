@@ -9,7 +9,7 @@
 
 import UIKit
 
-class ___FILEBASENAMEASIDENTIFIER___: UIViewController {
+@objc class ___FILEBASENAMEASIDENTIFIER___: UIViewController {
 	
 	var viewModel: ___VARIABLE_moduleName___ViewModelProtocol!
 

@@ -9,17 +9,17 @@
 
 import UIKit
 
-protocol ___VARIABLE_moduleName___ViewModelProtocol: class {
+@objc protocol ___VARIABLE_moduleName___ViewModelProtocol: class {
 
 }
 
-protocol ___VARIABLE_moduleName___InterfaceProtocol: class {
+@objc protocol ___VARIABLE_moduleName___InterfaceProtocol: class {
     
     var viewModel: ___VARIABLE_moduleName___ViewModelProtocol!  { get set }
     
 }
 
-class ___VARIABLE_moduleName___ViewModel {
+@objc class ___VARIABLE_moduleName___ViewModel: NSObject {
 
 	weak private var interface: ___VARIABLE_moduleName___InterfaceProtocol?
     weak private var router: ___VARIABLE_moduleName___RouterInputProtocol?

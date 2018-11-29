@@ -10,16 +10,16 @@
 import Foundation
 import Swinject
 
-protocol ___FILEBASENAMEASIDENTIFIER___Protocol {
+@objc protocol ___FILEBASENAMEASIDENTIFIER___Protocol {
     func build() -> ___VARIABLE_moduleName___RouterProtocol
 }
 
-class ___FILEBASENAMEASIDENTIFIER___: ___FILEBASENAMEASIDENTIFIER___Protocol {
+@objc class ___FILEBASENAMEASIDENTIFIER___: NSObject, ___FILEBASENAMEASIDENTIFIER___Protocol {
     
     private let assembler: Assembler
     
-    init(parentAssembler: Assembler) {
-        assembler = Assembler([___VARIABLE_moduleName___Container()], parent: parentAssembler)
+    init() {
+        assembler = Assembler([___VARIABLE_moduleName___Container()], parent: nil)
     }
 
     func build() ->  ___VARIABLE_moduleName___RouterProtocol {

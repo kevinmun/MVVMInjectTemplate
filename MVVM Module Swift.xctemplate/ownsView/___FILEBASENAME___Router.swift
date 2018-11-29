@@ -9,16 +9,16 @@
 
 import UIKit
 
-protocol ___VARIABLE_moduleName___RouterProtocol: class {
+@objc protocol ___VARIABLE_moduleName___RouterProtocol: class {
     var interface: ___VARIABLE_moduleName___InterfaceProtocol { get }
     var viewController: UIViewController? { get }
 }
 
-protocol ___VARIABLE_moduleName___RouterInputProtocol: class {
+@objc protocol ___VARIABLE_moduleName___RouterInputProtocol: class {
 
 }
 
-class ___VARIABLE_moduleName___Router: ___VARIABLE_moduleName___RouterProtocol {
+@objc class ___VARIABLE_moduleName___Router: NSObject, ___VARIABLE_moduleName___RouterProtocol {
 	
     let interface: ___VARIABLE_moduleName___InterfaceProtocol
     weak private var presentationContext: ModalPresentationContext?
