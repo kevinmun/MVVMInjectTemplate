@@ -18,7 +18,7 @@ import Swinject
     
     private let assembler: Assembler
     
-    init() {
+    override init() {
         assembler = Assembler([___VARIABLE_moduleName___Container()], parent: nil)
     }
 
